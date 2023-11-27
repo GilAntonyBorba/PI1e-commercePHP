@@ -28,7 +28,7 @@
         $errorMsgSenha = "A senha deve conter pelo menos 8 caracteres"; 
     }
     
-    // ENVIANDO PARA O BANCO-=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=
+    // BANCO-=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=
     if ($errorMsgEmail != "" || $errorMsgSenha != "") {
         $entrou = false;
     }else{
@@ -39,7 +39,9 @@
             require "conexaoMysql.php";
             $pdo = mysqlConnect();
 
-            $sql = "SELECT nome, email, senha FROM cliente WHERE email = :email";
+            $sql = "SELECT nome, email, senha
+            FROM cliente
+            WHERE email = :email";
             $stmt = $pdo->prepare($sql);
             $stmt->bindValue(':email', $email);
             $stmt->execute();

@@ -27,6 +27,8 @@
         <br>
         <br> -->
         <h1 class="title">Bem vindo!</h1>
+        <br>
+        <input type="button" class="btn btn-primary" value="Consultas" onclick="redirecionarParaPagina()">
         
     </main>
     <?php
@@ -39,7 +41,15 @@
     <script src="validaForm.js"></script>
     <script src="src/scripts/headerComplement.js"></script>
     <script>
+      const mainElement = document.querySelector('main');
+      // Adiciona a propriedade flex-direction: column; ao estilo do elemento
+      mainElement.style.flexDirection = 'column';
+
       activeCreateAccount();
+      
+      function redirecionarParaPagina() {
+        window.location.href = 'consultas.php';
+      }
     </script>
 
     <!-- <script>
